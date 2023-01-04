@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app = 'NUM_APP'>
+    <head>
+        <title>Analysis</title>
+        <link rel = 'icon' href = 'IMAGES/ICON.png'>
+        <link rel = 'stylesheet' type = 'text/css' href = 'STYLES/MAIN.css'>
+        <script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src = 'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4/angular.min.js'></script>
+	    <script src = 'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4/angular-cookies.min.js'></script>
+        <script src = 'SCRIPTS/SCRIPT_AN.js'></script>
+    </head>
+    <body ng-controller = 'NUM_CTRL'>
+        <div class = 'bar bar-top'>
+            <text>Numerothon</text>
+        </div>
+        <div class = 'bar bar-bottom'>
+            <text>Copyright &copy Numerothon 2020</text>
+        </div>
+        <div class = 'universal-normal'>
+            <h1>Analysis</h1>
+            <p ng-click = 'Change_Location ("DASHBOARD.html")' class = 'return'>Return to Dashboard</p>
+            <div class = 'sect-whole'>
+                <div class = 'box'>
+                    <h2>Progress</h2>
+                    <svg class = 'graph-body'>
+                        <rect ng-repeat = 'Graph in Graphs' class = 'bar-graph' style = 'x: {{Graph [2]}}px; y: {{Graph [1]}}px; height: {{Graph [0]}}px'></rect>
+                        <rect class = 'x-axis'></rect>
+                        <rect class = 'y-axis'></rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

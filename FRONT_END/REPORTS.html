@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app = 'NUM_APP'>
+    <head>
+        <title>Reports</title>
+        <link rel = 'icon' href = 'IMAGES/ICON.png'>
+        <link rel = 'stylesheet' type = 'text/css' href = 'STYLES/MAIN.css'>
+        <script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src = 'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4/angular.min.js'></script>
+	    <script src = 'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4/angular-cookies.min.js'></script>
+        <script src = 'SCRIPTS/SCRIPT_RE.js'></script>
+    </head>
+    <body ng-controller = 'NUM_CTRL'>
+        <div class = 'bar bar-top'>
+            <text>Numerothon</text>
+        </div>
+        <div class = 'bar bar-bottom'>
+            <text>Copyright &copy Numerothon 2020</text>
+        </div>
+        <div class = 'universal-mini' ng-show = 'Tests.length == 0'>
+            <h1>Reports</h1>
+            <p ng-click = 'Change_Location ("DASHBOARD.html")' class = 'return'>Return to Dashboard</p>
+            <div class = 'sec-whole'>
+                <div class = 'box'>
+                    <h2>No tests attempted</h2>
+                    <p>Attempt a test and view its report here</p>
+                </div>
+            </div>
+        </div>
+        <div class = 'universal-normal' ng-hide = 'Tests.length == 0'>
+            <h1>Reports</h1>
+            <p ng-click = 'Change_Location ("DASHBOARD.html")' class = 'return'>Return to Dashboard</p>
+            <div class = 'sect-rep-left'>
+                <div class = 'reports'>
+                    <div ng-repeat = 'Test in Tests' ng-click = 'View_Report (Test [0])' class = 'item'>
+                        <text class = 'topic'>{{Test [1]}}</text><br>
+                        <text class = 'time'>{{Test [2]}}</text>
+                    </div>
+                </div>
+            </div>
+            <div class = 'sect-rep-right'>
+                <div class = 'table-box'>
+                    <table class = 'report'>
+                        <tr>
+                            <th>ID</th>
+                            <th>Question</th>
+                            <th>Answer</th>
+                            <th>Attempt</th>
+                            <th>Time</th>
+                            <th>Percentile</th>
+                        </tr>
+                        <tr ng-repeat = 'Item in Report'>
+                            <td class = 'normal-cell'>{{$index + 1}}</td>
+                            <td class = 'normal-cell'>{{Item [0]}}</td>
+                            <td class = 'normal-cell'>{{Item [1]}}</td>
+                            <td class = '{{Item [3]}}-cell'>{{Item [2]}}</td>
+                            <td class = 'normal-cell'>{{Item [4]}}</td>
+                            <td class = 'normal-cell'>{{Item [5]}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

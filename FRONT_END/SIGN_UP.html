@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app = 'NUM_APP'>
+    <head>
+        <title>Sign Up</title>
+        <link rel = 'icon' href = 'IMAGES/ICON.png'>
+        <link rel = 'stylesheet' type = 'text/css' href = 'STYLES/MAIN.css'>
+        <script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src = 'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4/angular.min.js'></script>
+	    <script src = 'http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.4/angular-cookies.min.js'></script>
+        <script src = 'SCRIPTS/SCRIPT_SU.js'></script>
+    </head>
+    <body ng-controller = 'NUM_CTRL'>
+        <div class = 'bar bar-top'>
+            <text>Numerothon</text>
+        </div>
+        <div class = 'bar bar-bottom'>
+            <text>Copyright &copy Numerothon 2020</text>
+        </div>
+        <div class = 'universal-mini'>
+            <h1>Sign up</h1>
+            <div class = 'sect-whole'>
+                <div class = 'box'>
+                    <h2>Form</h2>
+                    <p>Enter your e-mail adress</p>
+                    <p><input class = 'text-box' ng-model = 'Values.E_Mail'/></p>
+                    <p>Enter your mobile number</p>
+                    <p><input class = 'text-box' ng-model = 'Values.Mobile_Number'/></p>
+                    <p>Enter your first name</p>
+                    <p><input class = 'text-box' ng-model = 'Values.First_Name'/></p>
+                    <p>Enter your last name</p>
+                    <p><input class = 'text-box' ng-model = 'Values.Last_Name'/></p>
+                    <p>Choose a password</p>
+                    <p><input class = 'text-box' type = 'password' ng-model = 'Values.Password_1'/></p>
+                    <p>Re-enter your password</p>
+                    <p><input class = 'text-box' type = 'password' ng-model = 'Values.Password_2'/></p>
+                    <p ng-hide = 'Modal_Information.Message == ""' class = 'message message-{{Modal_Information.Type}}'>{{Modal_Information.Message}}</p>
+                    <button ng-hide = 'Modal_Information.Type == "positive"' onclick = 'window.location = "HOME.html"'>Return</button>
+                    <button ng-hide = 'Modal_Information.Type == "positive"' ng-click = 'Submit ()'>Submit</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
