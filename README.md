@@ -7,4 +7,5 @@ Numerothon is a web-based learning application designed to improve the user's Ma
 ## Technologies used
 
 Front-end - HTML, CSS, JavaScript, Angular.js
+<br>
 Back-end - Python, Flask, MySQL
